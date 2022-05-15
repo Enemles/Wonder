@@ -2,4 +2,4 @@ framework:
     mailer:
         dsn: '%env(MAILER_DSN)%'
         headers:
-            from: 'Quentin <no-reply@wonder.fr>'
+            from: 'Selmène <contact@symfony-wonder.fr>'
