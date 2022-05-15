@@ -1,15 +1,18 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Posez une question
-{% endblock %}
+{% block title %}Poser une question{% endblock %}
+
 
 {% block body %}
-	<h1 class="mb-20">Poser une question</h1> {{ form_start(form) }}
 
-	<div class="block mb-20"> {{form_rest(form)}}
+    <h1 class="mb-20">Poser une question</h1>
 
-	</div>
+    {{ form_start(form) }}
+    <div class="block mb-20">
+        {{ form_rest(form) }}
+    </div>
+    <button class="btn btn-primary">Demander une réponse</button>
+    {{ form_end(form) }}
 
-	<button class="btn btn-primary">Demander une réponses</button> {{ form_end(form) }}
 
 {% endblock %}
