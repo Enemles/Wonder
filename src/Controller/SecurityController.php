@@ -72,7 +72,7 @@ class SecurityController extends AbstractController
     {
     }
 
-    #[Route('/reset-password/{token}', name: 'reset-password')]
+    #[Route('/reset-password/{token}', name: 'reset_password')]
     public function resetPassword(RateLimiterFactory $passwordRecoveryLimiter, UserPasswordHasherInterface $userPasswordHasher, Request $request, EntityManagerInterface $em, string $token, ResetPasswordRepository $resetPasswordRepository)
     {
         $limiter = $passwordRecoveryLimiter->create($request->getClientIp());
@@ -123,7 +123,7 @@ class SecurityController extends AbstractController
         ]);
     }
 
-    #[Route('/reset-password-request', name: 'reset-password-request')]
+    #[Route('/reset-password-request', name: 'reset_password_request')]
     public function resetPasswordRequest(RateLimiterFactory $passwordRecoveryLimiter,  MailerInterface $mailer, Request $request, UserRepository $userRepository, ResetPasswordRepository $resetPasswordRepository, EntityManagerInterface $em)
     {
         $limiter = $passwordRecoveryLimiter->create($request->getClientIp());
