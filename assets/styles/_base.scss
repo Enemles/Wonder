@@ -32,7 +32,9 @@
     border-radius: var(--border-radius);
     background-color: white;
     box-shadow: var(--box-shadow);
-    min-width: 960px;
+    @include s {
+        min-width: 960px;
+    }
 }
 
 .block-shadow:hover {

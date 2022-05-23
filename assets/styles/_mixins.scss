@@ -3,3 +3,8 @@
         @content;
     }
 }
+@mixin s {
+    @media (min-width: 1280px) {
+        @content;
+    }
+}
