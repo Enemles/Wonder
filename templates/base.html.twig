@@ -25,6 +25,14 @@
 	</head>
 	<body class="d-flex flex-column">
 		{{ include('partials/_header.html.twig') }}
+		{% for cat, list in app.flashes %}
+		{% for message in list %}
+			<div class="flash flash-{{ cat }}">
+				{{message}}
+			</div>
+		{% endfor %}
+
+	{% endfor %}
 		<div class="app-content flex-fill d-flex flex-row-nowrap justify-content-center">
 			<div class="content content-main d-flex flex-row-nowrap flex-column-xs flex-fill">
 				{{ include('partials/_sidebar.html.twig') }}
@@ -34,14 +42,7 @@
 				</div>
 			</div>
 		</div>
-		{% for cat, list in app.flashes %}
-			{% for message in list %}
-				<div class="flash flash-{{ cat }}">
-					{{message}}
-				</div>
-			{% endfor %}
 
-		{% endfor %}
 		{{ include('partials/_footer.html.twig') }}
 
 	</body>
